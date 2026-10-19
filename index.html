@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Diệp Bảo Khánh</title>
+<meta name="description" content="Diệp Bảo Khánh – Kỹ sư Điện tử Viễn thông, 15+ năm Sales & Marketing. Chia sẻ cách ứng dụng AI vào Sales & Marketing có quy trình, đo được bằng số.">
+<meta property="og:title" content="Diệp Bảo Khánh – AI cho Sales &amp; Marketing">
+<meta property="og:description" content="Kỹ sư Điện tử Viễn thông, 15+ năm Sales &amp; Marketing. Chia sẻ cách ứng dụng AI vào Sales &amp; Marketing.">
+<meta property="og:image" content="https://diepbaokhanh.com/diep-bao-khanh.jpg">
+<meta property="og:url" content="https://diepbaokhanh.com/">
+<meta property="og:type" content="profile">
+<link rel="canonical" href="https://diepbaokhanh.com/">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Diệp Bảo Khánh","jobTitle":"Sales & Marketing Manager","worksFor":{"@type":"Organization","name":"Công ty Cổ phần Công nghệ Wi-MESH"},"alumniOf":"Đại học Sư phạm Kỹ thuật TP.HCM","url":"https://diepbaokhanh.com/","image":"https://diepbaokhanh.com/diep-bao-khanh.jpg","sameAs":["https://www.facebook.com/diepbaokhanh"]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+
+/* Tone sáng một chế độ. Layout: hero nền xanh rất nhạt như màn hình đo tín hiệu, các phần nội dung sáng, đọc theo cột 1120px; dải 5 màu DBK đánh dấu mở và đóng trang */
+:root {
+  --bg: #FFFFFF;
+  --bg-alt: #F7FBF8;
+  --ink: #0F1F17;
+  --ink-2: #44554B;
+  --muted: #6B7A72;
+  --line: #E3EAE5;
+  --deep: #F1F8F3;
+  --deep-2: #FFFFFF;
+  --on-deep: #0F1F17;
+  --on-deep-2: #44554B;
+  --signal: #16A34A;
+  --hair: #DDE8E1;
+  color-scheme: light;
+
+  --green: #16A34A;  --green-t: #DCFCE7;  --green-s: #15803D;
+  --teal: #0EA5A5;   --teal-t: #CFFAFE;   --teal-s: #0E7C7C;
+  --violet: #8B5CF6; --violet-t: #EDE9FE; --violet-s: #6D28D9;
+  --amber: #F59E0B;  --amber-t: #FEF3C7;  --amber-s: #B45309;
+  --rose: #FB7185;   --rose-t: #FFE4E6;   --rose-s: #BE123C;
+
+  --font: "Be Vietnam Pro", Arial, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --wrap: 1120px;
+  --radius: 10px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--bg);
+}
+h1, h2, h3 { text-wrap: balance; margin: 0; line-height: 1.2; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 4px; }
+
+.wrap {
+  max-width: calc(var(--wrap) + 2 * 24px);
+  margin: 0 auto;
+  padding-left: max(24px, env(safe-area-inset-left, 0px));
+  padding-right: max(24px, env(safe-area-inset-right, 0px));
+}
+@media (max-width: 480px) {
+  .wrap {
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+}
+
+.strip { display: grid; grid-template-columns: repeat(5, 1fr); height: 6px; }
+.strip i:nth-child(1) { background: var(--green); }
+.strip i:nth-child(2) { background: var(--teal); }
+.strip i:nth-child(3) { background: var(--violet); }
+.strip i:nth-child(4) { background: var(--amber); }
+.strip i:nth-child(5) { background: var(--rose); }
+
+/* ---------- Nav ---------- */
+.nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--hair);
+}
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 14px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--on-deep); font-weight: 700; letter-spacing: .02em; }
+.brand-mark {
+  width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--green); color: #fff; font-size: 12px; font-weight: 800; letter-spacing: .04em;
+}
+.nav-links { display: flex; gap: 26px; }
+.nav-links a { color: var(--on-deep-2); text-decoration: none; font-size: 15px; font-weight: 500; }
+.nav-links a:hover { color: var(--on-deep); }
+.nav-cta {
+  text-decoration: none; font-size: 14px; font-weight: 600; color: #FFFFFF;
+  background: var(--signal); padding: 8px 16px; border-radius: 999px; white-space: nowrap;
+}
+@media (max-width: 860px) { .nav-links { display: none; } }
+
+/* ---------- Hero ---------- */
+.hero { position: relative; background: radial-gradient(900px 420px at 85% 10%, #DCFCE7 0%, transparent 70%), var(--deep); color: var(--on-deep); overflow: hidden; }
+.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hero .wrap { position: relative; padding-block: 72px 56px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 56px; align-items: center; }
+.hero-copy { min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+.eyebrow {
+  font-family: var(--mono); font-size: 12.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--green-s);
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+.eyebrow .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--signal); box-shadow: 0 0 0 4px rgba(22,163,74,.16); }
+.hero h1 { display: flex; flex-direction: column; gap: 14px; }
+.hero h1 .name { font-size: 20px; font-weight: 600; color: var(--on-deep-2); letter-spacing: .01em; }
+.hero h1 .thesis { font-size: clamp(36px, 5.4vw, 64px); font-weight: 800; letter-spacing: -.025em; line-height: 1.08; }
+.hero h1 .thesis em { font-style: normal; color: var(--green); }
+.hero .lead { color: var(--on-deep-2); font-size: 18.5px; max-width: 34em; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px; text-decoration: none; font-weight: 600; font-size: 15.5px;
+  padding: 13px 22px; border-radius: 999px; border: 1px solid transparent; transition: transform .2s ease, background .2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--signal); color: #FFFFFF; }
+.btn-primary:hover { background: var(--green-s); }
+.btn-ghost { color: var(--on-deep); border-color: #C9D8CF; background: #FFFFFF; }
+.btn-ghost:hover { border-color: var(--green); color: var(--green-s); }
+
+.portrait { position: relative; min-width: 0; justify-self: center; width: 100%; max-width: 380px; }
+.portrait-frame {
+  position: relative; aspect-ratio: 3 / 4; max-width: 100%;
+  border-radius: 999px 999px 18px 18px; overflow: hidden;
+  background: linear-gradient(180deg, #E9EEEB, #D6DDD9);
+  box-shadow: 0 0 0 1px var(--hair), 0 0 0 10px rgba(22,163,74,.07), 0 30px 60px -30px rgba(11,32,24,.25);
+}
+.portrait-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.portrait-tag {
+  position: absolute; left: -18px; bottom: 28px;
+  background: var(--deep-2); border: 1px solid var(--hair); color: var(--on-deep); box-shadow: 0 12px 30px -14px rgba(11,32,24,.22);
+  border-radius: 12px; padding: 12px 16px; display: flex; flex-direction: column; gap: 2px; max-width: 250px;
+}
+.portrait-tag b { font-size: 14.5px; }
+.portrait-tag span { font-size: 13px; color: var(--on-deep-2); line-height: 1.45; }
+
+.stats {
+  margin-top: 64px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--hair);
+}
+.stat { padding: 22px 20px 4px 0; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.stat + .stat { padding-left: 20px; border-left: 1px solid var(--hair); }
+.stat b { font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.stat:nth-child(1) b { color: var(--signal); }
+.stat:nth-child(2) b { color: var(--teal-s); }
+.stat:nth-child(3) b { color: var(--violet-s); }
+.stat:nth-child(4) b { color: var(--amber-s); }
+.stat span { font-size: 14px; color: var(--on-deep-2); line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .portrait { max-width: 320px; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat:nth-child(3) { padding-left: 0; border-left: 0; }
+  .stat:nth-child(n+3) { border-top: 1px solid var(--hair); }
+}
+@media (max-width: 480px) {
+  .hero .wrap { padding-block: 48px 40px; }
+  .portrait-tag { left: 8px; }
+}
+
+/* ---------- Sections ---------- */
+.section { padding-block: 104px; }
+.section.alt { background: var(--bg-alt); border-block: 1px solid var(--line); }
+@media (max-width: 640px) { .section { padding-block: 72px; } }
+.head { display: flex; flex-direction: column; gap: 16px; max-width: 760px; margin-bottom: 52px; }
+.pill {
+  align-self: flex-start; font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--green-s); background: var(--green-t); padding: 6px 14px; border-radius: 999px;
+}
+.head h2 { font-size: clamp(30px, 3.8vw, 44px); font-weight: 700; letter-spacing: -.02em; }
+.head p { color: var(--ink-2); font-size: 18px; max-width: 40em; }
+
+/* Định vị: thuật ngữ viễn thông -> cách làm marketing */
+.signal-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.signal { border-top: 2px solid var(--ink); padding-top: 22px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.signal .term { font-family: var(--mono); font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.signal h3 { font-size: 22px; font-weight: 700; }
+.signal p { color: var(--ink-2); }
+.signal svg { width: 100%; height: 48px; display: block; }
+.signal svg path { fill: none; stroke-width: 2; stroke-linecap: round; }
+.signal:nth-child(1) svg .a { stroke: var(--line); }
+.signal:nth-child(1) svg .b { stroke: var(--green); }
+.signal:nth-child(2) svg .a { stroke: var(--line); }
+.signal:nth-child(2) svg .b { stroke: var(--teal); }
+.signal:nth-child(3) svg .b { stroke: var(--violet); }
+.signal:nth-child(3) svg .c { fill: var(--violet); stroke: none; }
+@media (max-width: 860px) { .signal-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+.quote {
+  margin-top: 64px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 24px; align-items: start;
+  max-width: 880px;
+}
+.quote .mark { font-size: 72px; line-height: .8; font-weight: 800; color: var(--green); }
+.quote blockquote { margin: 0; font-size: clamp(20px, 2.2vw, 25px); font-weight: 500; line-height: 1.5; letter-spacing: -.01em; }
+.quote cite { display: block; margin-top: 14px; font-style: normal; font-size: 15px; color: var(--muted); }
+
+/* Chủ đề AI */
+.topics { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
+.topic {
+  grid-column: span 2; border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; gap: 14px;
+  min-width: 0;
+}
+.topic.wide { grid-column: span 3; }
+.topic .tag { font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.topic h3 { font-size: 22px; font-weight: 700; color: var(--ink); }
+.topic p { color: var(--ink-2); font-size: 16px; }
+.topic ul { margin: 4px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.topic li { font-size: 15px; color: var(--ink-2); display: grid; grid-template-columns: 14px minmax(0,1fr); gap: 10px; line-height: 1.5; }
+.topic li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; margin-top: 9px; background: currentColor; opacity: .5; }
+.t-green { background: var(--green-t); } .t-green .tag { color: var(--green-s); }
+.t-teal { background: var(--teal-t); } .t-teal .tag { color: var(--teal-s); }
+.t-violet { background: var(--violet-t); } .t-violet .tag { color: var(--violet-s); }
+.t-amber { background: var(--amber-t); } .t-amber .tag { color: var(--amber-s); }
+.t-rose { background: var(--rose-t); } .t-rose .tag { color: var(--rose-s); }
+@media (max-width: 960px) {
+  .topics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .topic, .topic.wide { grid-column: span 1; }
+  .topic:last-child { grid-column: span 2; }
+}
+@media (max-width: 620px) {
+  .topics { grid-template-columns: 1fr; }
+  .topic:last-child { grid-column: span 1; }
+}
+
+/* Quy trình làm việc cùng AI */
+.flow-wrap { margin-top: 72px; display: flex; flex-direction: column; gap: 22px; }
+.flow-wrap h3 { font-size: 24px; font-weight: 700; }
+.flow-wrap > p { color: var(--ink-2); max-width: 44em; }
+.flow { list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; counter-reset: step; }
+.flow li {
+  position: relative; border: 2px solid var(--c); background: var(--bg); border-radius: var(--radius);
+  padding: 18px 16px; display: flex; flex-direction: column; gap: 6px; min-width: 0;
+}
+.flow li::before {
+  counter-increment: step; content: "0" counter(step);
+  font-family: var(--mono); font-size: 13px; color: var(--cs);
+}
+.flow li b { font-size: 16.5px; line-height: 1.35; }
+.flow li span { font-size: 14.5px; color: var(--ink-2); line-height: 1.5; }
+.flow li:not(:last-child)::after {
+  content: ""; position: absolute; right: -11px; top: 50%; width: 10px; height: 2px; background: var(--green);
+}
+.f-setup { --c: var(--violet); --cs: var(--violet-s); }
+.f-ai { --c: var(--green); --cs: var(--green-s); }
+.f-gate { --c: var(--amber); --cs: var(--amber-s); }
+.f-loop { --c: var(--rose); --cs: var(--rose-s); }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 14px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.legend i { width: 12px; height: 12px; border-radius: 3px; border: 2px solid var(--c); }
+@media (max-width: 900px) {
+  .flow { grid-template-columns: 1fr; }
+  .flow li:not(:last-child)::after { right: auto; left: 28px; top: auto; bottom: -11px; width: 2px; height: 10px; }
+}
+
+.tools { margin-top: 56px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.tools .label { font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-right: 8px; }
+.chip { font-size: 14.5px; font-weight: 500; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); color: var(--ink-2); }
+
+/* Quá trình chuyên môn */
+.path { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.path li { border-radius: var(--radius); background: var(--t); padding: 26px 24px 28px; display: flex; flex-direction: column; gap: 12px; min-width: 0; position: relative; }
+.path li::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px; border-radius: var(--radius) var(--radius) 0 0; background: var(--c); }
+.path .step { font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--cs); }
+.path h3 { font-size: 20px; font-weight: 700; }
+.path p { color: var(--ink-2); font-size: 15.5px; }
+.p-violet { --c: var(--violet); --cs: var(--violet-s); --t: var(--violet-t); }
+.p-teal { --c: var(--teal); --cs: var(--teal-s); --t: var(--teal-t); }
+.p-amber { --c: var(--amber); --cs: var(--amber-s); --t: var(--amber-t); }
+.p-green { --c: var(--green); --cs: var(--green-s); --t: var(--green-t); }
+@media (max-width: 1000px) { .path { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .path { grid-template-columns: 1fr; } }
+
+/* Năng lực */
+.skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.skill-col { border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; background: var(--bg); display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.skill-col h3 { font-size: 21px; font-weight: 700; display: flex; align-items: center; gap: 12px; }
+.skill-col h3 i { width: 10px; height: 10px; border-radius: 50%; background: var(--c); }
+.skill-col ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.skill-col li { padding: 12px 0; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 16px; line-height: 1.55; }
+.skill-col li b { color: var(--ink); font-weight: 600; }
+@media (max-width: 800px) { .skills { grid-template-columns: 1fr; } .skill-col { padding: 24px; } }
+
+/* Liên hệ */
+.contact { background: var(--deep); color: var(--on-deep); border-top: 1px solid var(--hair); }
+.contact .wrap { padding-block: 96px 56px; }
+.contact-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+.contact h2 { font-size: clamp(30px, 4vw, 46px); font-weight: 800; letter-spacing: -.02em; }
+.contact .intro { display: flex; flex-direction: column; gap: 20px; }
+.contact .intro p { color: var(--on-deep-2); font-size: 18px; max-width: 32em; }
+.contact .intro ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.contact .intro li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 12px; color: var(--on-deep); font-size: 16.5px; }
+.contact .intro li::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--signal); margin-top: 8px; }
+.channels { display: flex; flex-direction: column; gap: 12px; }
+.channel {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px;
+  background: var(--deep-2); border: 1px solid var(--hair); border-radius: 14px; padding: 18px 20px;
+}
+.channel .k { font-size: 12.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--on-deep-2); font-family: var(--mono); }
+.channel .v { font-size: 18px; font-weight: 600; user-select: all; overflow-wrap: anywhere; color: var(--on-deep); text-decoration: none; }
+.channel a.v:hover { color: var(--signal); }
+.copy {
+  font: inherit; font-size: 13.5px; font-weight: 600; cursor: pointer; color: var(--on-deep);
+  background: transparent; border: 1px solid #C9D8CF; border-radius: 999px; padding: 7px 14px; white-space: nowrap;
+}
+.copy:hover { border-color: var(--signal); color: var(--signal); }
+.foot {
+  margin-top: 80px; padding-top: 24px; border-top: 1px solid var(--hair);
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 14px; color: var(--on-deep-2);
+}
+.foot .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--green); margin-right: 10px; vertical-align: 0; }
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+</style>
+</head>
+<body>
+
+<div class="strip" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Diệp Bảo Khánh, về đầu trang"><span class="brand-mark">DBK</span><span>Diệp Bảo Khánh</span></a>
+    <nav class="nav-links" aria-label="Điều hướng chính">
+      <a href="#dinh-vi">Định vị</a>
+      <a href="#ai">AI cho Sales &amp; Marketing</a>
+      <a href="#hanh-trinh">Chuyên môn</a>
+      <a href="#nang-luc">Năng lực</a>
+    </nav>
+    <a class="nav-cta" href="#lien-he">Kết nối</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <canvas id="waves" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="dot"></span>Kỹ sư Điện tử Viễn thông · 15+ năm Sales &amp; Marketing</div>
+          <h1 id="hero-title">
+            <span class="name">Diệp Bảo Khánh</span>
+            <span class="thesis">Đưa <em>AI</em> vào Sales &amp; Marketing từ góc nhìn của người quản lý.</span>
+          </h1>
+          <p class="lead">Nền tảng kỹ sư Điện tử Viễn thông giúp tôi hiểu AI từ gốc: các mô hình, cách vận hành và thiết lập hệ thống. Hơn 15 năm quản lý Sales &amp; Marketing và điều hành doanh nghiệp giúp tôi biết nên đặt AI vào đâu để tạo ra doanh thu. Tại đây, tôi chia sẻ cách làm đó một cách có quy trình và đo được bằng số.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#ai">Xem chủ đề chia sẻ</a>
+            <a class="btn btn-ghost" href="#lien-he">Kết nối với tôi</a>
+          </div>
+        </div>
+        <figure class="portrait" style="margin:0">
+          <div class="portrait-frame">
+            <img src="diep-bao-khanh.jpg" alt="Chân dung Diệp Bảo Khánh" width="420" height="560">
+          </div>
+          <figcaption class="portrait-tag">
+            <b>Sales &amp; Marketing Manager</b>
+            <span>Công ty Cổ phần Công nghệ Wi-MESH, hạ tầng wifi diện rộng và wifi marketing</span>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b>15+ năm</b><span>Sales &amp; Marketing, quảng cáo số và thương mại điện tử</span></div>
+        <div class="stat"><b>7 năm</b><span>Co-Founder, CEO agency quảng cáo số</span></div>
+        <div class="stat"><b>Partner</b><span>Google Partner và Zalo Ads Partner thời điều hành agency</span></div>
+        <div class="stat"><b>Kỹ sư</b><span>Điện tử Viễn thông, ĐH Sư phạm Kỹ thuật TP.HCM</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="dinh-vi" aria-labelledby="dv-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="pill">Định vị</span>
+        <h2 id="dv-title">Ba lớp tư duy tôi mang vào mỗi dự án AI</h2>
+        <p>Một kỹ sư hiểu công nghệ, một người điều hành nhìn bài toán kinh doanh, một người quản lý Sales &amp; Marketing chịu trách nhiệm doanh thu. Ba góc nhìn này quyết định cách tôi chọn, dựng và triển khai AI.</p>
+      </div>
+
+      <div class="signal-grid">
+        <article class="signal">
+          <svg viewBox="0 0 300 48" preserveAspectRatio="none" aria-hidden="true">
+            <path class="a" d="M0 24 L10 14 L18 33 L27 10 L36 36 L44 18 L53 30 L62 12 L70 35 L79 20 L88 29 L97 11 L105 37 L114 17 L123 31 L132 13 L140 34 L149 22 L158 27 L167 12 L175 36 L184 19 L193 30 L202 14 L210 33 L219 21 L228 28 L237 11 L245 35 L254 18 L263 31 L272 15 L280 34 L289 23 L300 26"/>
+            <path class="b" d="M0 24 C 25 4, 50 4, 75 24 S 125 44, 150 24 S 200 4, 225 24 S 275 44, 300 24"/>
+          </svg>
+          <span class="term">Nền tảng · Kỹ sư Điện tử Viễn thông</span>
+          <h3>Hiểu AI từ gốc kỹ thuật</h3>
+          <p>Tôi nắm cách các mô hình AI hoạt động, điểm mạnh và giới hạn của từng loại, cách thiết lập và vận hành hệ thống như agent, automation, kết nối dữ liệu. Nhờ vậy tôi chọn đúng công cụ cho đúng việc và tự dựng được quy trình.</p>
+        </article>
+        <article class="signal">
+          <svg viewBox="0 0 300 48" preserveAspectRatio="none" aria-hidden="true">
+            <path class="a" d="M0 44 L300 44"/>
+            <path class="b" d="M0 40 L60 40 L60 31 L120 31 L120 22 L180 22 L180 13 L240 13 L240 4 L300 4"/>
+          </svg>
+          <span class="term">Tư duy · Quản lý, điều hành doanh nghiệp</span>
+          <h3>Bắt đầu từ vấn đề kinh doanh</h3>
+          <p>Những năm điều hành agency và quản lý tại doanh nghiệp dạy tôi nhìn mọi việc qua mục tiêu, chi phí, nhân sự và rủi ro. AI chỉ đáng đầu tư khi giải quyết được một vấn đề cụ thể và đo được hiệu quả.</p>
+        </article>
+        <article class="signal">
+          <svg viewBox="0 0 300 48" preserveAspectRatio="none" aria-hidden="true">
+            <path class="b" d="M20 36 C 20 8, 120 8, 150 24 S 280 40, 280 12"/>
+            <path class="c" d="M280 4 L288 16 L272 16 Z"/>
+          </svg>
+          <span class="term">Góc nhìn · Quản lý Sales &amp; Marketing</span>
+          <h3>AI phục vụ doanh thu và đội ngũ</h3>
+          <p>Tôi đưa AI vào từng khâu của phễu bán hàng: nghiên cứu, nội dung, quảng cáo, chăm sóc khách hàng, báo cáo. Mỗi khâu gắn với KPI, bước duyệt và cách đào tạo để đội ngũ dùng được hằng ngày.</p>
+        </article>
+      </div>
+
+      <div class="quote">
+        <span class="mark" aria-hidden="true">“</span>
+        <div>
+          <blockquote>Thế giới đang thay đổi rất nhanh, các rào cản cũ liên tục bị phá vỡ. Năng lực tự học và tiếp nhận cái mới quan trọng ngang với kinh nghiệm, vì kinh nghiệm giúp mình biết chọn lọc thông tin nào đáng dùng.</blockquote>
+          <cite>Quan điểm sống và làm việc của Diệp Bảo Khánh</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="ai" aria-labelledby="ai-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="pill">Chia sẻ về AI</span>
+        <h2 id="ai-title">AI cho người làm Sales &amp; Marketing</h2>
+        <p>Những gì tôi chia sẻ đến từ công việc hằng ngày: dựng quy trình nội dung có AI tham gia, chạy quảng cáo, làm báo cáo và đào tạo đội ngũ. Mỗi chủ đề đi kèm quy trình, câu lệnh mẫu và cách đo hiệu quả.</p>
+      </div>
+
+      <div class="topics">
+        <article class="topic wide t-green">
+          <span class="tag">Nghiên cứu</span>
+          <h3>Thấu hiểu thị trường và khách hàng</h3>
+          <p>Dùng AI để đọc nhanh dữ liệu, tài liệu ngành và phản hồi khách hàng, rút ra insight có căn cứ.</p>
+          <ul>
+            <li>Chân dung khách hàng và hành trình mua hàng</li>
+            <li>Phân tích đối thủ, tìm khoảng trống định vị</li>
+          </ul>
+        </article>
+        <article class="topic wide t-teal">
+          <span class="tag">Nội dung</span>
+          <h3>Sản xuất nội dung đa kênh có quy trình duyệt</h3>
+          <p>Từ kế hoạch tháng đến bài đăng, hình ảnh, video ngắn, giữ đúng giọng thương hiệu.</p>
+          <ul>
+            <li>Khung bài AIDA, PAS và bộ tiêu chuẩn văn phong</li>
+            <li>Kế hoạch nội dung, lịch đăng và báo cáo hiệu quả</li>
+          </ul>
+        </article>
+        <article class="topic t-violet">
+          <span class="tag">Quảng cáo</span>
+          <h3>Performance marketing với AI</h3>
+          <p>Brief, mẫu quảng cáo, phân tích số liệu Google Ads và Meta để tối ưu chi phí trên mỗi lead.</p>
+        </article>
+        <article class="topic t-amber">
+          <span class="tag">Bán hàng</span>
+          <h3>AI hỗ trợ đội Sales</h3>
+          <p>Kịch bản tư vấn, xử lý từ chối, email theo dõi, chatbot và quản lý khách hàng trên CRM.</p>
+        </article>
+        <article class="topic t-rose">
+          <span class="tag">Vận hành</span>
+          <h3>Đội ngũ AI tự vận hành</h3>
+          <p>Kết hợp agent, automation và Google Workspace thành đội ngũ AI chạy việc lặp lại, con người giữ quyền duyệt.</p>
+        </article>
+      </div>
+
+      <div class="flow-wrap">
+        <h3>Mô hình làm việc cùng AI tôi đang áp dụng</h3>
+        <p>AI làm phần thực thi, con người giữ hai việc: đặt mục tiêu và duyệt kết quả. Số liệu sau mỗi vòng quay về để điều chỉnh cách làm.</p>
+        <ol class="flow">
+          <li class="f-setup"><b>Thiết lập nền tảng</b><span>Mục tiêu, dữ liệu, tiêu chuẩn thương hiệu</span></li>
+          <li class="f-ai"><b>AI nghiên cứu, soạn thảo</b><span>Insight, kế hoạch, bản nháp nội dung</span></li>
+          <li class="f-gate"><b>Người duyệt và chốt</b><span>Kiểm tra thông điệp, số liệu, pháp lý</span></li>
+          <li class="f-ai"><b>Triển khai đa kênh</b><span>Website, fanpage, quảng cáo, email, Zalo</span></li>
+          <li class="f-loop"><b>Đo lường, quay lại bước 02</b><span>KPI thực tế điều chỉnh vòng tiếp theo</span></li>
+        </ol>
+        <div class="legend" aria-label="Chú thích màu">
+          <span><i style="--c: var(--violet)"></i>Thiết lập một lần</span>
+          <span><i style="--c: var(--green)"></i>AI thực hiện</span>
+          <span><i style="--c: var(--amber)"></i>Điểm duyệt của con người</span>
+          <span><i style="--c: var(--rose)"></i>Vòng phản hồi</span>
+        </div>
+      </div>
+
+      <div class="tools" aria-label="Công cụ thường dùng">
+        <span class="label">Công cụ thường dùng</span>
+        <span class="chip">ChatGPT</span>
+        <span class="chip">Claude</span>
+        <span class="chip">Gemini</span>
+        <span class="chip">NotebookLM</span>
+        <span class="chip">Canva</span>
+        <span class="chip">Google Ads</span>
+        <span class="chip">Meta Ads</span>
+        <span class="chip">Google Drive, Sheets</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="hanh-trinh" aria-labelledby="ht-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="pill">Quá trình chuyên môn</span>
+        <h2 id="ht-title">Từ kỹ sư viễn thông đến quản lý Sales &amp; Marketing</h2>
+        <p>Tôi đã làm ở cả hai phía: bên cung cấp dịch vụ marketing và bên doanh nghiệp cần tăng trưởng. Mỗi chặng thêm một lớp năng lực cho cách tôi ứng dụng AI hôm nay.</p>
+      </div>
+
+      <ol class="path">
+        <li class="p-violet">
+          <span class="step">Nền tảng</span>
+          <h3>Kỹ thuật và quảng cáo trực tuyến</h3>
+          <p>Kỹ sư Điện tử Viễn thông, bước vào nghề với vai trò tư vấn, trưởng nhóm rồi quản lý digital marketing tại tập đoàn truyền thông internet, sau đó dẫn dắt đội sales cho một nền tảng trình duyệt web.</p>
+        </li>
+        <li class="p-teal">
+          <span class="step">Điều hành</span>
+          <h3>Co-Founder, CEO agency quảng cáo số</h3>
+          <p>Điều hành agency Google Ads, Facebook Ads, Zalo Ads, TikTok Ads và dịch vụ website; Google Partner và Zalo Ads Partner. Trực tiếp quản trị tài chính, nhân sự, khách hàng và vận hành doanh nghiệp.</p>
+        </li>
+        <li class="p-amber">
+          <span class="step">Quản lý</span>
+          <h3>Sales &amp; Marketing tại doanh nghiệp</h3>
+          <p>Marketing Director, Head of Marketing &amp; Ecommerce, Sales &amp; Marketing Manager trong các ngành thể thao, dược phẩm, tư vấn pháp lý, thương mại điện tử. Cố vấn chiến lược cho SMEs, xây dựng và chuyển giao bộ phận marketing.</p>
+        </li>
+        <li class="p-green">
+          <span class="step">Hiện tại</span>
+          <h3>Sales &amp; Marketing Manager, Wi-MESH</h3>
+          <p>Phụ trách Sales &amp; Marketing cho đơn vị hạ tầng wifi diện rộng và wifi marketing; xây dựng đội ngũ AI cho nội dung, quảng cáo và báo cáo.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section alt" id="nang-luc" aria-labelledby="nl-title">
+    <div class="wrap">
+      <div class="head">
+        <span class="pill">Năng lực</span>
+        <h2 id="nl-title">Chiến lược, thực thi và đội ngũ</h2>
+        <p>Thế mạnh của tôi là nội dung kết hợp giải pháp công nghệ và quảng cáo số. Về bán hàng, sở trường là các sản phẩm cần tư vấn: giải pháp đầu tư, giáo dục, sản phẩm công nghệ, quảng cáo.</p>
+      </div>
+      <div class="skills">
+        <div class="skill-col">
+          <h3><i style="--c: var(--green)"></i>Chiến lược và tăng trưởng</h3>
+          <ul>
+            <li><b>Chiến lược Sales &amp; Marketing tổng thể</b>, từ kế hoạch đến thực thi đa nền tảng</li>
+            <li><b>Digital &amp; performance marketing</b> trên Google, Facebook, Zalo, TikTok, tối ưu chuyển đổi lead</li>
+            <li><b>Branding</b>: chiến lược thương hiệu, nội dung đa kênh online và offline</li>
+            <li><b>Thương mại điện tử</b>: vận hành và tăng trưởng doanh thu trực tuyến</li>
+            <li><b>Chuyển đổi số</b>: website, CRM/ERP, automation, AI, Zalo mini app, chatbot, email</li>
+          </ul>
+        </div>
+        <div class="skill-col">
+          <h3><i style="--c: var(--amber)"></i>Quản trị và đội ngũ</h3>
+          <ul>
+            <li><b>Cơ cấu phòng ban</b>, thiết lập KPI, SOP, phối hợp liên phòng ban</li>
+            <li><b>Quản lý ngân sách</b> marketing và nhân sự, kiểm soát rủi ro để đạt doanh thu</li>
+            <li><b>Đào tạo, phát triển đội ngũ</b> trẻ và nhiều thế hệ</li>
+            <li><b>Hợp tác agency</b>: tìm kiếm, phối hợp và quản trị đối tác</li>
+            <li><b>Triết lý quản trị</b>: đội ngũ tinh gọn, chuyên môn tốt, đa năng; quản trị theo mục tiêu và quy trình linh hoạt</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="contact" id="lien-he" aria-labelledby="lh-title">
+  <div class="strip" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="intro">
+        <h2 id="lh-title">Cùng trao đổi về AI trong Sales &amp; Marketing</h2>
+        <p>Tôi sẵn sàng kết nối với doanh nghiệp, đội ngũ và người làm nghề muốn đưa AI vào công việc một cách bài bản.</p>
+        <ul>
+          <li>Chia sẻ, đào tạo ứng dụng AI cho đội Sales &amp; Marketing</li>
+          <li>Tư vấn chiến lược và cấu trúc bộ phận marketing</li>
+          <li>Trao đổi chuyên môn, hợp tác dự án</li>
+        </ul>
+      </div>
+      <div class="channels">
+        <div class="channel">
+          <div><div class="k">Email</div><span class="v">khanhdiepbao@gmail.com</span></div>
+          <button class="copy" type="button" id="copy-email" data-copy="khanhdiepbao@gmail.com">Sao chép</button>
+        </div>
+        <div class="channel">
+          <div><div class="k">Điện thoại · Zalo</div><span class="v">0946 922 101</span></div>
+          <button class="copy" type="button" id="copy-phone" data-copy="0946922101">Sao chép</button>
+        </div>
+        <div class="channel">
+          <div><div class="k">Facebook</div><a class="v" href="https://www.facebook.com/diepbaokhanh" target="_blank" rel="noopener">facebook.com/diepbaokhanh</a></div>
+          <button class="copy" type="button" id="copy-fb" data-copy="https://www.facebook.com/diepbaokhanh">Sao chép</button>
+        </div>
+      </div>
+    </div>
+    <div class="foot">
+      <span><span class="dot"></span>© 2026 Diệp Bảo Khánh</span>
+      <span>diepbaokhanh.com · TP. Hồ Chí Minh</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Nút sao chép
+  document.querySelectorAll('.copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var text = btn.getAttribute('data-copy');
+      var done = function () { btn.textContent = 'Đã sao chép'; setTimeout(function () { btn.textContent = 'Sao chép'; }, 1800); };
+      var fallback = function () {
+        var v = btn.parentElement.querySelector('.v');
+        var r = document.createRange(); r.selectNodeContents(v);
+        var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+        btn.textContent = 'Đã chọn, nhấn Ctrl+C';
+      };
+      try {
+        navigator.clipboard.writeText(text).then(done, fallback);
+      } catch (e) { fallback(); }
+    });
+  });
+
+  // Sóng tín hiệu nền hero
+  var canvas = document.getElementById('waves');
+  if (!canvas || !canvas.getContext) return;
+  var ctx = canvas.getContext('2d');
+  var colors = ['#16A34A', '#0EA5A5', '#8B5CF6', '#F59E0B', '#FB7185'];
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var w = 0, h = 0, dpr = 1, t = 0, raf = null;
+
+  function size() {
+    var r = canvas.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = r.width; h = r.height;
+    canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    var base = h * 0.8;
+    for (var i = 0; i < colors.length; i++) {
+      ctx.beginPath();
+      var amp = 18 + i * 9, freq = 0.004 + i * 0.0016, speed = 0.5 + i * 0.18, off = i * 1.3;
+      for (var x = 0; x <= w; x += 4) {
+        var env = Math.sin((x / w) * Math.PI);
+        var y = base + Math.sin(x * freq + t * speed + off) * amp * env + Math.sin(x * freq * 3.1 - t * 0.7) * 4 * env;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.strokeStyle = colors[i];
+      ctx.globalAlpha = 0.32;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+  }
+  function loop() { t += 0.012; draw(); raf = requestAnimationFrame(loop); }
+
+  size(); draw();
+  window.addEventListener('resize', function () { size(); draw(); });
+  if (!reduce) {
+    var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting && !raf) loop();
+        else if (!e.isIntersecting && raf) { cancelAnimationFrame(raf); raf = null; }
+      });
+    }) : null;
+    if (io) io.observe(canvas); else loop();
+  }
+})();
+</script>
+
+</body>
+</html>
